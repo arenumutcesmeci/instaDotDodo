@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="InstaDot.PostQueryWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:fa="http://schemas.fontawesome.io/icons/"
+             xmlns:local="clr-namespace:InstaDot"
+             mc:Ignorable="d"
+             Name="PostQuery" d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition MaxHeight="50px"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Label Content="Gönderi Sorgulama" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" FontWeight="ExtraBold" Foreground="#5F0A87"/>
+            <Button Name="RefreshBtn" Margin="10,0" Background="Transparent" BorderBrush="Transparent" Foreground="Gray" Click="RefreshBtn_OnClick">
+                <Button.Content>
+                    <fa:FontAwesome Icon="Refresh" FontSize="25"/>
+                </Button.Content>
+            </Button>
+        </StackPanel>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition MaxHeight="100px"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Label Content="Post Url:" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20"/>
+                <TextBox Name="UrlTxt" Width="200" Height="30" Margin="10,0" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" BorderBrush="#5F0A87"/>
+                <Button Name="SearchBtn" Margin="10,0" Background="Transparent" BorderBrush="Transparent" Foreground="Gray" Click="SearchBtn_OnClick">
+                    <Button.Content>
+                        <fa:FontAwesome Icon="Search" FontSize="25"/>
+                    </Button.Content>
+                </Button>
+            </StackPanel>
+            <StackPanel Name="PostInfo" Grid.Row="1" HorizontalAlignment="Center">
+                <MediaElement Name="PostContent"></MediaElement>
+                <Label Name="LikeCount" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>
